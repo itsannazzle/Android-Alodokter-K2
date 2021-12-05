@@ -21,4 +21,14 @@
         <item name="textAllCaps">false</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="textFieldLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="helperTextTextColor">@color/error</item>
+        <item name="hintTextColor">@color/gsText</item>
+    </style>
+
 </resources>
