@@ -11,6 +11,7 @@
         android:theme="@style/Theme.AlodokterByKelompok2">
         <activity
             android:name=".MainActivity"
+            android:theme="@style/splashTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
