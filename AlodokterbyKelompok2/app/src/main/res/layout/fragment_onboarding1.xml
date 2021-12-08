@@ -11,6 +11,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/onborading_1"
         android:src="@drawable/ob1"
         app:layout_constraintBottom_toTopOf="@+id/btnStarted"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,10 +20,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnStarted"
         style="@style/primaryButton"
-        android:layout_width="315dp"
         android:layout_marginBottom="@dimen/margin32"
-        android:layout_height="@dimen/btnHeight"
-        android:text="Get started"
+        android:text="@string/mulai"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -33,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin24"
-        android:text="Get Instant Consult From Your Preferred Doctor"
+        android:text="@string/konsultasi_dengan_dokter"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,13 +41,13 @@
 
     <TextView
         android:id="@+id/textView5"
+        style="@style/TextAppearance.MaterialComponents.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.MaterialComponents.Body1"
-        android:textAlignment="center"
         android:layout_marginTop="@dimen/margin8"
+        android:text="@string/onboardDescText"
+        android:textAlignment="center"
         android:textColor="@color/gsText"
-        android:text="Now you can speak to your preferred doctor within 1 minute through chat/voice call/ video call"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
