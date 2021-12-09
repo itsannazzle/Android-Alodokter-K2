@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_44"
+    android:paddingBottom="@dimen/spacing_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.homepage.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTitleHomepage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_16"
+            android:fontFamily="@font/plus_jakarta_display_medium"
+            android:paddingStart="@dimen/spacing_24"
+            android:paddingEnd="@dimen/spacing_50"
+            android:text="@string/label_emergency_consult"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/font_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_72"
+            android:layout_marginTop="@dimen/spacing_10"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spacing_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleHomepage" />
+
+        <TextView
+            android:id="@+id/tvTopArticles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_16"
+            android:fontFamily="@font/plus_jakarta_display_medium"
+            android:paddingStart="@dimen/spacing_24"
+            android:paddingEnd="@dimen/spacing_50"
+            android:text="@string/label_top_articles"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/font_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvTopDoctors" />
+
+        <TextView
+            android:id="@+id/tvSeeAllArticles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_16"
+            android:fontFamily="@font/plus_jakarta_text_regular"
+            android:paddingEnd="@dimen/spacing_20"
+            android:text="@string/label_see_all"
+            android:textColor="@color/text_abu"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvTopDoctors" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopArticles"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_270"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/spacing_10"
+            android:paddingStart="@dimen/spacing_24"
+            android:paddingEnd="@dimen/spacing_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTopArticles" />
+
+        <TextView
+            android:id="@+id/tvFindService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_6"
+            android:fontFamily="@font/plus_jakarta_display_medium"
+            android:paddingStart="@dimen/spacing_24"
+            android:paddingEnd="@dimen/spacing_50"
+            android:text="@string/label_find_your_services"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/font_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvTopArticles" />
+
+        <ImageView
+            android:id="@+id/ivPsychologist"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spacing_80"
+            android:layout_marginStart="@dimen/spacing_24"
+            android:layout_marginTop="@dimen/spacing_10"
+            android:contentDescription="@string/content_desc_button_psychologist"
+            android:src="@drawable/btn_otak"
+            app:layout_constraintEnd_toStartOf="@id/ivOpthalmologist"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFindService" />
+
+        <ImageView
+            android:id="@+id/ivOpthalmologist"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spacing_80"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_10"
+            android:contentDescription="@string/content_desc_button_opthalmologist"
+            android:src="@drawable/btn_mata"
+            app:layout_constraintEnd_toStartOf="@id/ivDentists"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@id/ivPsychologist"
+            app:layout_constraintTop_toBottomOf="@id/tvFindService" />
+
+        <ImageView
+            android:id="@+id/ivDentists"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spacing_80"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_10"
+            android:contentDescription="@string/content_desc_button_dentists"
+            android:src="@drawable/btn_gigi"
+            app:layout_constraintEnd_toStartOf="@id/ivCardiologist"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@id/ivOpthalmologist"
+            app:layout_constraintTop_toBottomOf="@id/tvFindService" />
+
+        <ImageView
+            android:id="@+id/ivCardiologist"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spacing_80"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_10"
+            android:layout_marginEnd="@dimen/spacing_24"
+            android:contentDescription="@string/content_desc_button_cardiologist"
+            android:src="@drawable/btn_paru"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@id/ivDentists"
+            app:layout_constraintTop_toBottomOf="@id/tvFindService" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.nextint.alodokterbykelompok2.ui.homepage.HomeFragment"
+        android:label="@string/label_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_nav_service"
+            app:destination="@id/nav_service"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"/>
+        <action
+            android:id="@+id/action_nav_home_to_nav_article"
+            app:destination="@id/nav_article"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_profile"
+            app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_appointment"
+            app:destination="@id/nav_appointment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_payment_method"
+            app:destination="@id/nav_payment_method" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.nextint.alodokterbykelompok2.ui.profile.ProfileFragment"
+        android:label="@string/label_profile"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/nav_payment_method"
+        android:name="com.nextint.alodokterbykelompok2.ui.paymentmethod.PaymentMethodFragment"
+        android:label="@string/label_payment_methods"
+        tools:layout="@layout/fragment_payment_method"/>
+
+    <fragment
+        android:id="@+id/nav_appointment"
+        android:name="com.nextint.alodokterbykelompok2.ui.appointment.AppointmentFragment"
+        android:label="@string/label_appointment_date"
+        tools:layout="@layout/fragment_appointment"/>
+
+    <fragment
+        android:id="@+id/nav_service"
+        android:name="com.nextint.alodokterbykelompok2.ui.service.ServiceFragment"
+        android:label="@string/label_services"
+        tools:layout="@layout/fragment_service"/>
+
+    <fragment
+        android:id="@+id/nav_article"
+        android:name="com.nextint.alodokterbykelompok2.ui.article.ArticleFragment"
+        android:label="@string/label_articles"
+        tools:layout="@layout/fragment_article"/>
+
+</navigation>
