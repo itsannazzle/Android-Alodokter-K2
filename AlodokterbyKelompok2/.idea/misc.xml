@@ -8,7 +8,7 @@
         <entry key="app/src/main/res/drawable/rounded_edit_text.xml" value="0.15830618892508144" />
         <entry key="app/src/main/res/drawable/splash_theme.xml" value="0.15830618892508144" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_create_account.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/fragment_create_account.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_onboarding1.xml" value="0.11" />
         <entry key="app/src/main/res/layout/fragment_onboarding2.xml" value="0.1" />

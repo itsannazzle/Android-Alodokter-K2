@@ -17,4 +17,7 @@
     <string name="tidak_punya_akun_buat_disini">Tidak punya akun? Buat disini</string>
     <string name="official_partner">Official partner</string>
     <string name="logo_kemkes">logo kemkes</string>
+    <string name="buat_akun">Buat akun</string>
+    <string name="nama">Nama</string>
+    <string name="ulangi_password">Ulangi password</string>
 </resources>
