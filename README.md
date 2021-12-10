@@ -29,3 +29,9 @@ A mobile app for online doctor consulatation
   <li>Glide</li>
   <li>Retrofit</li>
 </ul>
+
+# App requirement
+
+<ul>
+  <li>Min android version Lollipop (Android version 5.0)</li>
+</ul>
