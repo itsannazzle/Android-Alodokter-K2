@@ -1,7 +1,6 @@
 # Android-Alodokter-K2
 Android team kelompok 2 Alodokter bootcamp
 
-<img width="1080" alt="Instagram post - 1 (1)" src="https://user-images.githubusercontent.com/50267658/120613025-05f91500-c480-11eb-99ce-67d3ff792875.png">
 
 A mobile app for online doctor consulatation 
 
