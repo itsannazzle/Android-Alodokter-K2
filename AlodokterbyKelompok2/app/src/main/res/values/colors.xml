@@ -16,6 +16,13 @@
     <color name="error">#8C2929</color>
     <color name="gsText">#767677</color>
 
+    <!--    [Start] add by Adi Yusuf    -->
+    <color name="soft_cream">#F9F6F4</color>
+    <color name="text_color_black">#29282C</color>
+    <color name="color_trans">#00FFFFFF</color>
+    <color name="color_blue">#E4F2FF</color>
+    <!--    [End] add by Adi Yusuf    -->
+
     <color name="text_black">#393938</color>
     <color name="text_abu">#6F393938</color>
     <color name="white50">#F4F5F9</color>

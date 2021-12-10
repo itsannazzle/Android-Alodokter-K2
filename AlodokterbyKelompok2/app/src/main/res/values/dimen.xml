@@ -14,4 +14,24 @@
     <dimen name="margin30">30dp</dimen>
 
     <dimen name="btnHeight">57dp</dimen>
+
+    <!--    Created by Adi Yusuf    -->
+    <!--    Complete Profile    -->
+    <dimen name="mt_image_logo">53dp</dimen>
+    <dimen name="mt_header_title">32dp</dimen>
+    <dimen name="radius">12dp</dimen>
+    <dimen name="gender_chip_width">133dp</dimen>
+    <dimen name="mb_header_title">5dp</dimen>
+
+    <!--    Edit Profile    -->
+    <dimen name="iv_profile_size">165dp</dimen>
+    <dimen name="iv_icon_camera_size">53dp</dimen>
+    <dimen name="pd_icon_camera_size">18dp</dimen>
+
+    <!--    Profile     -->
+    <dimen name="ic_button_size">23dp</dimen>
+
+    <!--    Text Dimen    -->
+    <dimen name="gender_chip_text_size">18sp</dimen>
+    <!--    Created by Adi Yusuf    -->
 </resources>

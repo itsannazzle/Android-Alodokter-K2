@@ -31,4 +31,49 @@
         <item name="hintTextColor">@color/gsText</item>
     </style>
 
+    <!--   [Start Style] Material Edit Text Outlined Box add by Adi Yusuf    -->
+    <style name="textFieldLayoutOutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="helperTextTextColor">@color/error</item>
+        <item name="hintTextColor">@color/gsText</item>
+        <item name="android:radius">@dimen/radius</item>
+        <item name="android:layout_marginEnd">@dimen/margin16</item>
+        <item name="android:layout_marginStart">@dimen/margin16</item>
+        <item name="android:layout_marginTop">@dimen/margin24</item>
+        <item name="shapeAppearanceOverlay">@style/textFieldLayoutOutlinedBox.Rounded</item>
+    </style>
+    <style name="textFieldLayoutOutlinedBox.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius</item>
+    </style>
+    <!--   [End Style] Material Edit Text Outlined Box    -->
+
+    <!--   [Start Style] Gender Chips add by Adi Yusuf    -->
+    <style name="GenderChipsGroup" parent="Widget.MaterialComponents.ChipGroup">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin20</item>
+        <item name="android:layout_marginBottom">@dimen/margin10</item>
+        <item name="chipSpacingHorizontal">@dimen/margin40</item>
+    </style>
+
+    <style name="GenderChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="materialThemeOverlay">@style/ChipStyle.ThemeOverlay.MyApp.Chip.Choice</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="chipBackgroundColor">@color/chips_background_color</item>
+        <item name="android:textColor">@color/chips_text_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/gender_chip_text_size</item>
+        <item name="android:layout_width">@dimen/gender_chip_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="chipCornerRadius">@dimen/radius</item>
+    </style>
+
+    <style name="ChipStyle.ThemeOverlay.MyApp.Chip.Choice" parent="">
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+    <!--   [End Style] Gender Chips    -->
+
 </resources>

@@ -20,6 +20,30 @@
     <string name="buat_akun">Buat akun</string>
     <string name="nama">Nama</string>
     <string name="ulangi_password">Ulangi password</string>
+    <!--    [Start] Add by Adi Yusuf    -->
+    <string name="content_description_logo_team_2">Logo Team 2</string>
+    <string name="Complete_your_profile">Complete your profile</string>
+    <string name="let_s_start_with_the_basics">Let’s start with the basics</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="birthday">Date of birth</string>
+    <string name="height">Height (CM)</string>
+    <string name="weight">Weight (KG)</string>
+    <string name="blood_type">Blood type</string>
+    <string name="btn_continue">Continue</string>
+    <string name="name">Name</string>
+    <string name="content_description_profile_image">Profile Image</string>
+    <string name="btn_save">Save</string>
+    <string name="old_password">Old password</string>
+    <string name="new_password">New password</string>
+    <string name="retype_new_password">Retype new password</string>
+    <string name="sample_name">Arunika Adira Putri</string>
+    <string name="sample_email">aruadiputri@gmail.com</string>
+    <string name="content_description_icon_edit_profile">Icon Edit Profile</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="content_description_icon_change_password">Icon Change Password</string>
+    <string name="change_password">Change password</string>
+    <!--    [End] Add by Adi Yusuf    -->
     <string name="label_home">Home</string>
     <string name="label_services">Services</string>
     <string name="label_articles">Articles</string>
