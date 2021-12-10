@@ -23,7 +23,8 @@ interface AlodokterAPI {
 
     }
     @POST()
-    suspend fun postUserLogin(){
-
-    }
+    suspend fun postUserLogin(
+        @Field("email") email : String,
+        @Field("password") password : String
+        )
 }

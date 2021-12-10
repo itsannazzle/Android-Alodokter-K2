@@ -11,14 +11,14 @@
         android:id="@+id/textView2"
         style="@style/TextAppearance.MaterialComponents.Headline4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin24"
         android:text="@string/temukan_infromasi_kesehatan_terpercaya"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLewatkan" />
 
     <TextView
         android:id="@+id/textView5"
@@ -41,16 +41,24 @@
         android:src="@drawable/ob2"
         app:layout_constraintBottom_toTopOf="@+id/materialButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton"
         style="@style/primaryButton"
-        android:layout_width="315dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="@dimen/margin32"
         android:text="@string/mulai"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLewatkan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lewatkan"
+        android:textColor="@color/secondary"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

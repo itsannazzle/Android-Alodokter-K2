@@ -24,6 +24,10 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initListener(savedInstanceState)
+    }
+
+    private fun initListener(savedInstanceState: Bundle?){
         binding.btnLogin.setOnClickListener {
             startActivity(Intent(requireContext(),HomePageActivity::class.java))
         }
@@ -35,6 +39,10 @@ class LoginFragment : Fragment() {
                     .addToBackStack(null)
                     .commit()
             }
+        }
+
+        binding.tvLewatkan.setOnClickListener {
+            startActivity(Intent(requireContext(),HomePageActivity::class.java))
         }
     }
 

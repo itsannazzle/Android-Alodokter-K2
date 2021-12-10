@@ -50,4 +50,5 @@
     <string name="label_close">Close</string>
     <string name="label_service_fragment">Hello Service Fragment</string>
     <string name="label_search">Search</string>
+    <string name="lewatkan">Lewatkan</string>
 </resources>
