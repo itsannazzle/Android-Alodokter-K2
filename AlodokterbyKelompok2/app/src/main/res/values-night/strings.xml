@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_home">Home</string>
+    <string name="label_services">Services</string>
+    <string name="label_articles">Articles</string>
+    <string name="label_messages">Messages</string>
+    <string name="label_foto_profil">Photo Profile</string>
+    <string name="label_emergency_consult">Emergency consult with your recommended doctor</string>
+    <string name="label_top_articles">Top Articles</string>
+    <string name="label_see_all">See All</string>
+    <string name="label_find_your_services">Find Your Services</string>
+    <string name="label_psychologist">Psychologist</string>
+    <string name="content_desc_button_psychologist">Button Psychologist</string>
+    <string name="content_desc_button_opthalmologist">Button Opthalmologist</string>
+    <string name="content_desc_button_cardiologist">Button Cardiologist</string>
+    <string name="content_desc_image_article">Image Article</string>
+    <string name="label_rizqan_mubarak">Rizqan Mubarak</string>
+    <string name="label_hello">Hello</string>
+    <string name="label_profile">Profile</string>
+    <string name="label_payment_methods">Payment Methods</string>
+    <string name="label_saved">Saved</string>
+    <string name="label_appointment_date">Appointment date</string>
+    <string name="label_logout">Logout</string>
+    <string name="label_search">Search</string>
+</resources>

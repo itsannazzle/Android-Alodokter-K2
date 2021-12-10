@@ -11,7 +11,12 @@
 
     <color name="primary">#459AFE</color>
     <color name="secondary">#EF873D</color>
+    <color name="primaryVariant">#3472BC</color>
     <color name="primaryAccent">#F4F5F9</color>
     <color name="error">#8C2929</color>
     <color name="gsText">#767677</color>
+
+    <color name="text_black">#393938</color>
+    <color name="text_abu">#6F393938</color>
+    <color name="white50">#F4F5F9</color>
 </resources>
