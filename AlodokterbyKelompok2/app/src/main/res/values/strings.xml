@@ -51,4 +51,8 @@
     <string name="label_service_fragment">Hello Service Fragment</string>
     <string name="label_search">Search</string>
     <string name="lewatkan">Lewatkan</string>
+    <string name="helperNotBlank">Tidak boleh kosong</string>
+    <string name="helperEmail">Masukan email yang sah</string>
+    <string name="password_not_valid">Minimal password 8 karakter</string>
+    <string name="password_not_same">Password tidak sesuai</string>
 </resources>
