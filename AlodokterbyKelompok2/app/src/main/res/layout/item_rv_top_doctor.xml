@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/ivTopDoctor"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="@dimen/spacing_60"
-        android:layout_height="@dimen/spacing_60"
-        android:src="@drawable/image_doctor"/>
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_10"
+        app:cardCornerRadius="@dimen/spacing_130"
+        app:cardElevation="0dp">
+
+        <ImageView
+            android:id="@+id/ivTopDoctor"
+            android:layout_width="@dimen/spacing_60"
+            android:layout_height="@dimen/spacing_60"
+            android:adjustViewBounds="true"
+            android:src="@drawable/image_doctor"
+            android:scaleType="centerCrop" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

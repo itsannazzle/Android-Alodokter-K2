@@ -48,21 +48,36 @@
             android:lines="3"
             android:text="@string/label_title_article"
             android:textSize="@dimen/font_18"
-            app:layout_constraintEnd_toStartOf="@+id/ivPictureArticle"
+            app:layout_constraintEnd_toStartOf="@+id/rounded"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_weight="8"
             app:layout_constraintTop_toBottomOf="@id/tvAuthor" />
-        
-        <ImageView
-            android:id="@+id/ivPictureArticle"
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rounded"
             android:layout_width="0dp"
-            android:layout_height="@dimen/spacing_130"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_10"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvTitle"
+            android:layout_marginVertical="@dimen/spacing_10"
             app:layout_constraintHorizontal_weight="3"
-            android:src="@drawable/image_article"
-            android:contentDescription="@string/content_desc_image_article"/>
+            app:cardCornerRadius="@dimen/spacing_10"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/ivPictureArticle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/image_article"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/content_desc_image_article"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

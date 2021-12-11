@@ -14,7 +14,7 @@
         <action
             android:id="@+id/action_home_to_nav_service"
             app:destination="@id/nav_service"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"/>
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
         <action
             android:id="@+id/action_nav_home_to_nav_article"
             app:destination="@id/nav_article"

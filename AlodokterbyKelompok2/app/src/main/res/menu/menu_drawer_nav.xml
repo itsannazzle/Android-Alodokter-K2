@@ -22,11 +22,9 @@
             android:title="@string/label_appointment_date"
             android:icon="@drawable/ic_clipboard_tick_24_white"/>
     </group>
-    <group>
-        <item
-            android:id="@+id/nav_logout"
-            android:enabled="true"
-            android:title="@string/label_logout"
-            android:actionLayout="@layout/button_logout"/>
-    </group>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:enabled="true"
+        android:title="@string/label_logout" />
 </menu>

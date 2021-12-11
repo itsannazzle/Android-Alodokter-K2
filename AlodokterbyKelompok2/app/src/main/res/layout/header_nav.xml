@@ -6,14 +6,16 @@
     android:background="@color/primary"
     android:padding="@dimen/spacing_10">
 
-    <com.mikhaellopez.circularimageview.CircularImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivProfil"
         android:layout_width="@dimen/spacing_80"
         android:layout_height="@dimen/spacing_80"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/ShapeAppearance.App.CircleImageView"
         android:layout_marginStart="@dimen/spacing_14"
         android:layout_marginTop="@dimen/spacing_50"
+        android:scaleType="centerCrop"
         android:src="@drawable/imageprofile"
         android:contentDescription="@string/label_foto_profil"/>
 
