@@ -3,21 +3,24 @@ package com.nextint.alodokterbykelompok2.ui.login
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.nextint.alodokterbykelompok2.R
 import com.nextint.alodokterbykelompok2.databinding.FragmentLoginBinding
 import com.nextint.alodokterbykelompok2.ui.createaccount.CreateAccountFragment
 import com.nextint.alodokterbykelompok2.ui.homepage.HomePageActivity
 import com.nextint.alodokterbykelompok2.utils.ReactiveField
+import com.nextint.alodokterbykelompok2.utils.Result
 import io.reactivex.Observable
-import java.util.*
 
 
 class LoginFragment : Fragment() {
     private lateinit var binding : FragmentLoginBinding
+    private val viewModel : LoginViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,11 +33,28 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initListener(savedInstanceState)
         setupRxStream()
+        userInput()
     }
 
     private fun initListener(savedInstanceState: Bundle?){
         binding.btnLogin.setOnClickListener {
-            startActivity(Intent(requireContext(),HomePageActivity::class.java))
+            val email = binding.edEmail.text.toString()
+            val password = binding.edEmail.text.toString()
+            viewModel.postLogin(email, password)
+            viewModel.dataResponse.observe(viewLifecycleOwner,{
+                result ->
+                when(result){
+                    is Result.Success ->{
+                        val intent = Intent(requireContext(),HomePageActivity::class.java)
+                        intent.putExtra("EXTRA_USERNAME",result.data.username)
+                        startActivity(intent)
+                    }
+                    is Result.Error -> {
+                        Snackbar.make(requireView(),"Login gagal", Snackbar.LENGTH_SHORT).show()
+                    }
+                }
+            })
+
         }
 
         binding.tvCreateAccount.setOnClickListener {
@@ -88,6 +108,10 @@ class LoginFragment : Fragment() {
                 ReactiveField.buttonState(!it,btn,requireContext())
             }
         }
+    }
+
+    private fun userInput(){
+
     }
 
 }

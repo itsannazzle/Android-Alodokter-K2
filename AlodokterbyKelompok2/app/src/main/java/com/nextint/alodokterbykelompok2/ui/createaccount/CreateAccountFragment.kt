@@ -2,17 +2,22 @@ package com.nextint.alodokterbykelompok2.ui.createaccount
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.nextint.alodokterbykelompok2.R
 import com.nextint.alodokterbykelompok2.databinding.FragmentCreateAccountBinding
 import com.nextint.alodokterbykelompok2.model.CreateUserResponse
 import com.nextint.alodokterbykelompok2.ui.login.LoginFragment
+import com.nextint.alodokterbykelompok2.utils.DatePicker
 import com.nextint.alodokterbykelompok2.utils.ReactiveField
+import com.nextint.alodokterbykelompok2.utils.Result
 import io.reactivex.Observable
 
 
@@ -32,6 +37,10 @@ class CreateAccountFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initListener(savedInstanceState)
         setupRxStream()
+        createAccountState()
+        loading()
+        onRadioButtonClicked(binding.genderRb)
+
     }
 
     private fun initListener(savedInstanceState: Bundle?) {
@@ -46,6 +55,7 @@ class CreateAccountFragment : Fragment() {
         binding.btnCreateAccount.setOnClickListener {
             getuserInput()
         }
+        binding.btnDob.setOnClickListener { showDatePicker() }
     }
 
     private fun getuserInput() {
@@ -54,7 +64,17 @@ class CreateAccountFragment : Fragment() {
             val nama = edName.text.toString()
             val email = edEmail.text.toString()
             val password = edPassword.text.toString()
-            val dataUser = CreateUserResponse(name = nama, email = email, password = password)
+            val username = edUsername.text.toString()
+            val noTelp = edNotelp.text.toString()
+            val dob = tvDobValue.text.toString()
+            var gender = "Perempuan"
+            genderRb.setOnCheckedChangeListener { radioGroup, i ->
+                gender = radioGroup.findViewById<RadioButton>(i).text.toString()
+
+            }
+            val dataUser = CreateUserResponse(name = nama, username = username, email = email, password = password,
+                phone = noTelp, birthday = dob, gender = gender )
+
             viewModel.postCreateAccount(dataUser)
         }
 
@@ -71,6 +91,30 @@ class CreateAccountFragment : Fragment() {
         nama.subscribe {
             binding.tilName.let { layout ->
                 ReactiveField.helperText(it,layout,R.string.helperNotBlank,requireContext())
+            }
+        }
+
+        val username = with(binding.edUsername){
+            let {
+                ReactiveField.minLengthStream(it,8)
+            }
+        }
+
+        username.subscribe {
+            binding.tilUsername.let { layout ->
+                ReactiveField.helperText(it,layout,R.string.minLeng8,requireContext())
+            }
+        }
+
+        val nomorTelpon = with(binding.edNotelp){
+            let {
+                ReactiveField.minLengthStream(it,12)
+            }
+        }
+
+        nomorTelpon.subscribe {
+            binding.tilNotelp.let { layout ->
+                ReactiveField.helperText(it,layout,R.string.minLeng12,requireContext())
             }
         }
 
@@ -119,9 +163,11 @@ class CreateAccountFragment : Fragment() {
         val btnStream = Observable.combineLatest(
             nama,
             email,
+            username,
+            nomorTelpon,
             passStream,
             passConfrimStream, {
-                t1 : Boolean, t2 : Boolean, t3 : Boolean, t4 : Boolean -> !t1 && !t2 && !t3 && !t4
+                t1 : Boolean, t2 : Boolean, t3 : Boolean, t4 : Boolean, t5 : Boolean, t6 : Boolean, -> !t1 && !t2 && !t3 && !t4 && !t5 && !t6
             }
         )
 
@@ -133,4 +179,49 @@ class CreateAccountFragment : Fragment() {
 
     }
 
+    private fun createAccountState(){
+        viewModel.dataResponse.observe(viewLifecycleOwner,{ result ->
+            when(result){
+                is Result.Success -> {
+                    result.data.email?.let { Log.d("Anna", it) }
+                    Snackbar.make(requireView(),"Akun berhasil dibuat",Snackbar.LENGTH_SHORT).show()
+                }
+                is Result.Error -> result.throwable.message?.let {
+                    Snackbar.make(requireView(),
+                        it,Snackbar.LENGTH_SHORT).show()
+                }
+            }
+        })
+    }
+
+    private fun loading(){
+        viewModel.loading.observe(viewLifecycleOwner,{
+            if (it) {
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+        })
+    }
+
+    private fun onRadioButtonClicked(view: View) {
+        val selectedRb = binding.genderRb.check(R.id.radio_perempuan)
+        Log.d("Anna",selectedRb.toString())
+        binding.genderRb.setOnCheckedChangeListener { radioGroup, i ->
+            Log.d("Anna", "${radioGroup.findViewById<RadioButton>(i).text}")
+        }
+    }
+
+    fun showDatePicker(){
+        val datePicker = DatePicker()
+        val supportFragment = requireActivity().supportFragmentManager
+
+        supportFragment.setFragmentResultListener("REQUEST_KEY",viewLifecycleOwner){
+                rs, bundle -> if (rs == "REQUEST_KEY") {
+            val date = bundle.getString("SELECTED_DATE")
+            binding.tvDobValue.text = date
+        }
+        }
+        datePicker.show(supportFragment,"DatePickerFragment")
+    }
 }

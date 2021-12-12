@@ -1,10 +1,11 @@
 package com.nextint.alodokterbykelompok2.data.remote
 
 import com.nextint.alodokterbykelompok2.model.CreateUserResponse
+import com.nextint.alodokterbykelompok2.model.LoginResponse
 import retrofit2.http.*
 
 interface AlodokterAPI {
-    @POST("/users")
+    @POST("/register")
     suspend fun createAccount(
         @Body dataUser : CreateUserResponse
     ) : CreateUserResponse
@@ -22,9 +23,10 @@ interface AlodokterAPI {
     suspend fun getUserData(){
 
     }
-    @POST()
+    @FormUrlEncoded
+    @POST("/auth/login")
     suspend fun postUserLogin(
         @Field("email") email : String,
         @Field("password") password : String
-        )
+        ) : LoginResponse
 }

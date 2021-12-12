@@ -4,30 +4,24 @@ import com.google.gson.annotations.SerializedName
 
 data class CreateUserResponse(
 
-	@field:SerializedName("place_of_birth")
-	val placeOfBirth: String? = null,
-
-	@field:SerializedName("password")
-	val password: String? = null,
-
-	@field:SerializedName("address")
-	val address: String? = null,
+	@field:SerializedName("birthday")
+	val birthday: String,
 
 	@field:SerializedName("gender")
-	val gender: String? = null,
+	val gender: String,
 
 	@field:SerializedName("phone")
-	val phone: Int? = null,
-
-	@field:SerializedName("date_of_birth")
-	val dateOfBirth: String? = null,
+	val phone: String,
 
 	@field:SerializedName("name")
-	val name: String? = null,
+	val name: String,
 
-	@field:SerializedName("id")
-	val id: String? = null,
+	@field:SerializedName("password")
+	val password: String,
 
 	@field:SerializedName("email")
-	val email: String? = null
+	val email: String,
+
+	@field:SerializedName("username")
+	val username: String
 )
