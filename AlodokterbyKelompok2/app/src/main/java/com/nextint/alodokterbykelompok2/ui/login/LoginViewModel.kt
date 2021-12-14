@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nextint.alodokterbykelompok2.model.CreateUserResponse
+import com.nextint.alodokterbykelompok2.model.LoginRequest
 import com.nextint.alodokterbykelompok2.model.LoginResponse
 import com.nextint.alodokterbykelompok2.utils.Result
 import com.nextint.alodokterbykelompok2.utils.RetrofitInstanceBuilder
@@ -18,11 +19,11 @@ class LoginViewModel : ViewModel() {
     private val _loading : MutableLiveData<Boolean> = MutableLiveData(false)
     val loading : LiveData<Boolean> = _loading
 
-    fun postLogin(email : String, password : String){
+    fun postLogin(loginRequest: LoginRequest){
         _loading.postValue(true)
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val data = RetrofitInstanceBuilder.RETROFIT_INSTANCE.postUserLogin(email, password)
+                val data = RetrofitInstanceBuilder.RETROFIT_INSTANCE.postUserLogin(loginRequest)
                 _dataResponse.postValue(Result.Success(data))
             } catch (e : Throwable){
                 _dataResponse.postValue(Result.Error(e))

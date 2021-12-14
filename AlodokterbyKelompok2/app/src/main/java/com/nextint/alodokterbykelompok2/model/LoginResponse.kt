@@ -13,3 +13,8 @@ data class LoginResponse(
 	@field:SerializedName("username")
 	val username: String
 )
+
+data class LoginRequest(
+	val email : String,
+	val password : String
+)

@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.nextint.alodokterbykelompok2.R
 import com.nextint.alodokterbykelompok2.databinding.FragmentLoginBinding
+import com.nextint.alodokterbykelompok2.model.LoginRequest
 import com.nextint.alodokterbykelompok2.ui.createaccount.CreateAccountFragment
 import com.nextint.alodokterbykelompok2.ui.homepage.HomePageActivity
 import com.nextint.alodokterbykelompok2.utils.ReactiveField
@@ -33,7 +34,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initListener(savedInstanceState)
         setupRxStream()
-        userInput()
+
         setupLoading()
     }
 
@@ -108,7 +109,8 @@ class LoginFragment : Fragment() {
     private fun userInput() {
         val email = binding.edEmail.text.toString()
         val password = binding.edEmail.text.toString()
-        viewModel.postLogin(email, password)
+        val loginReq = LoginRequest(email, password)
+        viewModel.postLogin(loginReq)
         viewModel.dataResponse.observe(viewLifecycleOwner, { result ->
             when (result) {
                 is Result.Success -> {
