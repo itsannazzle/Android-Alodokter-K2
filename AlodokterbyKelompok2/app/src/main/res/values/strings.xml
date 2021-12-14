@@ -62,4 +62,6 @@
     <string name="laki_laki">Laki-laki</string>
     <string name="tanggal_lahir">Tanggal Lahir</string>
     <string name="nomor_telpon">Nomor telpon</string>
+    <string name="pilih_tanggal_lahir">Pilih tanggal lahir</string>
+    <string name="icondate">iconDate</string>
 </resources>

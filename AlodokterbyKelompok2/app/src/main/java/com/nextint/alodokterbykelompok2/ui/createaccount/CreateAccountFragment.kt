@@ -183,7 +183,14 @@ class CreateAccountFragment : Fragment() {
         viewModel.dataResponse.observe(viewLifecycleOwner,{ result ->
             when(result){
                 is Result.Success -> {
-                    result.data.email?.let { Log.d("Anna", it) }
+                    with(binding){
+                        edName.text?.clear()
+                        edEmail.text?.clear()
+                        edPassword.text?.clear()
+                        edUsername.text?.clear()
+                        edNotelp.text?.clear()
+                        tvDobValue.text = getString(R.string.pilih_tanggal_lahir)
+                    }
                     Snackbar.make(requireView(),"Akun berhasil dibuat",Snackbar.LENGTH_SHORT).show()
                 }
                 is Result.Error -> result.throwable.message?.let {
@@ -199,14 +206,13 @@ class CreateAccountFragment : Fragment() {
             if (it) {
                 binding.progressBar.visibility = View.VISIBLE
             } else {
-                binding.progressBar.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.GONE
             }
         })
     }
 
     private fun onRadioButtonClicked(view: View) {
         val selectedRb = binding.genderRb.check(R.id.radio_perempuan)
-        Log.d("Anna",selectedRb.toString())
         binding.genderRb.setOnCheckedChangeListener { radioGroup, i ->
             Log.d("Anna", "${radioGroup.findViewById<RadioButton>(i).text}")
         }

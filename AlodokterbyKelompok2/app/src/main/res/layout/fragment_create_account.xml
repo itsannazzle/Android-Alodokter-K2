@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/margin16"
+    android:scrollbars="none"
     tools:context=".ui.createaccount.CreateAccountFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,8 +51,8 @@
             android:id="@+id/genderRb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="@dimen/margin8"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvGender">
@@ -71,31 +72,33 @@
 
         <TextView
             android:id="@+id/tvDob"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_marginTop="@dimen/margin24"
+            android:text="@string/tanggal_lahir"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/margin24"
-            app:layout_constraintTop_toBottomOf="@id/genderRb"
-            android:text="@string/tanggal_lahir"/>
+            app:layout_constraintTop_toBottomOf="@id/genderRb" />
+
         <TextView
             android:id="@+id/tvDobValue"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_marginTop="@dimen/margin8"
+            android:text="@string/pilih_tanggal_lahir"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/margin8"
-            app:layout_constraintTop_toBottomOf="@id/tvDob"
-            android:text="Pilih tanggal lahir"/>
+            app:layout_constraintTop_toBottomOf="@id/tvDob" />
 
         <ImageButton
             android:id="@+id/btnDob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="showDatePicker"
             android:layout_marginStart="@dimen/margin24"
+            android:contentDescription="@string/icondate"
+            android:onClick="showDatePicker"
             android:src="@drawable/ic_baseline_calendar_month_24"
             app:layout_constraintBottom_toBottomOf="@+id/tvDobValue"
             app:layout_constraintStart_toEndOf="@id/tvDobValue"
@@ -199,9 +202,9 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/btnHeight"
             android:layout_marginTop="@dimen/margin24"
-            android:text="@string/buat_akun"
-            android:enabled="false"
             android:backgroundTint="@color/gsText"
+            android:enabled="false"
+            android:text="@string/buat_akun"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_retypePassword" />
@@ -220,17 +223,17 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_marginTop="@dimen/margin40"
             style="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin40"
             android:layout_marginBottom="@dimen/margin8"
-            app:layout_constraintTop_toBottomOf="@id/tvLogin"
             android:text="@string/official_partner"
             android:textColor="@color/gsText"
             app:layout_constraintBottom_toTopOf="@+id/imageView4"
             app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4" />
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@id/tvLogin" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -240,8 +243,7 @@
             android:src="@drawable/kemkes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -255,11 +257,11 @@
 
         <TextView
             android:id="@+id/tvGender"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jenis kelamin"
             android:layout_marginTop="@dimen/margin24"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:text="Jenis kelamin"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_username" />
