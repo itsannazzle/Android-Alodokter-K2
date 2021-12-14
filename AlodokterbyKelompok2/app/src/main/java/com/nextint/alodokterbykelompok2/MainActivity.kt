@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.nextint.alodokterbykelompok2.ui.onboarding.Onboarding1Fragment
+import com.nextint.alodokterbykelompok2.ui.onboarding.ViewPagerOnBoardingFragment
 import java.net.URLClassLoader.newInstance
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_AlodokterByKelompok2)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.appContainer, Onboarding1Fragment())
+                .replace(R.id.appContainer, ViewPagerOnBoardingFragment())
                 .commitNow()
         }
         setContentView(R.layout.activity_main)

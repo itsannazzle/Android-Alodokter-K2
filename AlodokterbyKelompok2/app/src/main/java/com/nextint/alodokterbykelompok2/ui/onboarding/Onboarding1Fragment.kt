@@ -25,6 +25,10 @@ class Onboarding1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initListener(savedInstanceState)
+    }
+
+    private fun initListener(savedInstanceState: Bundle?){
         binding.btnStarted.setOnClickListener {
             if (savedInstanceState == null) {
                 parentFragmentManager.beginTransaction()
@@ -33,7 +37,14 @@ class Onboarding1Fragment : Fragment() {
                     .commit()
             }
         }
-
+        binding.tvLewatkan.setOnClickListener {
+            if (savedInstanceState == null) {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.appContainer, LoginFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
+        }
     }
 
 }
