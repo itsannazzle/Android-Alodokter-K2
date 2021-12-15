@@ -1,7 +1,7 @@
 package com.nextint.alodokterbykelompok2.utils
 
 import com.nextint.alodokterbykelompok2.data.remote.response.article.Article
-import com.nextint.alodokterbykelompok2.model.Doctor
+import com.nextint.alodokterbykelompok2.data.remote.response.doctor.Doctor
 
 object DataDummy {
     fun generateDummyDoctor(): List<Doctor>{
@@ -9,39 +9,31 @@ object DataDummy {
         doctor.add(
             Doctor(
                 "https://res.cloudinary.com/dk0z4ums3/image/upload/w_100,h_100,c_thumb,g_face,dpr_2.0/v1558683445/image_doctor/Dr.%20Ari%20Djatikusumo%2C%20SpM.jpg.jpg",
-                "New Terrillland",
-                0,
-                "L",
-                "2021",
-                "2021",
-                "Bogor",
                 "123",
-                123,
+                "2021-09-01",
+                "08123",
                 "dr. Ari Djatikusumo, Sp.M",
+                "2021-09-01",
                 "Dokter Mata",
-                "Jakarta",
-                "1",
-                "ari@mail",
-                "dfsi"
+                "Bogor",
+                1,
+                "Rabu",
+                "Ini dokter mata"
             )
         )
         doctor.add(
             Doctor(
                 "https://res.cloudinary.com/dk0z4ums3/image/upload/w_100,h_100,c_thumb,g_face,dpr_2.0/v1558683704/image_doctor/Dr.%20Eko%20F.%20Karim%2C%20SpM.jpg.jpg",
-                "New Terrillland",
-                0,
-                "L",
-                "2021",
-                "2021",
-                "Bogor",
-                "123",
-                124,
+                "124",
+                "2021-09-01",
+                "08291",
                 "dr. Eko Firdianto Karim, Sp.M",
+                "2021-09-01",
                 "Dokter Mata",
                 "Jakarta",
-                "2",
-                "ari@mail",
-                "dfsi"
+                2,
+                "Kamis",
+                "Ini dokter mata juga",
             )
         )
         return doctor

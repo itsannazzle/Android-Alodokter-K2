@@ -50,4 +50,7 @@
     <string name="label_close">Close</string>
     <string name="label_service_fragment">Hello Service Fragment</string>
     <string name="label_search">Search</string>
+    <string name="label_desc_article">For thousands of years, humans have recognized that the sun plays a role in the emergence and ...</string>
+    <string name="content_desc_image_doctor">Image Doctor</string>
+    <string name="label_dokter_kulit">Dokter Kulit</string>
 </resources>
