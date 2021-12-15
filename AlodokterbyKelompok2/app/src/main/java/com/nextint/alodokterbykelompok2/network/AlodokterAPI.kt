@@ -1,12 +1,12 @@
-package com.nextint.alodokterbykelompok2.data.remote
+package com.nextint.alodokterbykelompok2.network
 
+import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleResponse
 import com.nextint.alodokterbykelompok2.model.CreateUserResponse
-import com.nextint.alodokterbykelompok2.model.LoginRequest
-import com.nextint.alodokterbykelompok2.model.LoginResponse
+import retrofit2.Call
 import retrofit2.http.*
 
 interface AlodokterAPI {
-    @POST("/register")
+    @POST("/users")
     suspend fun createAccount(
         @Body dataUser : CreateUserResponse
     ) : CreateUserResponse
@@ -16,17 +16,15 @@ interface AlodokterAPI {
         @Path("id") idUser : Int
     ) : CreateUserResponse
 
-    @GET()
-    suspend fun getArticle(){
+    @GET("articles")
+    fun getArticle() : Call<ArticleResponse>
 
-    }
     @GET()
     suspend fun getUserData(){
 
     }
+    @POST()
+    suspend fun postUserLogin(){
 
-    @POST("/auth/login")
-    suspend fun postUserLogin(
-        @Body loginRequest: LoginRequest
-        ) : LoginResponse
+    }
 }
