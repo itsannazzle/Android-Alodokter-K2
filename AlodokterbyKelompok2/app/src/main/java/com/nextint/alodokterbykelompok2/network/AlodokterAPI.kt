@@ -1,6 +1,8 @@
-package com.nextint.alodokterbykelompok2.data.remote
+package com.nextint.alodokterbykelompok2.network
 
+import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleResponse
 import com.nextint.alodokterbykelompok2.model.CreateUserResponse
+import retrofit2.Call
 import retrofit2.http.*
 
 interface AlodokterAPI {
@@ -14,10 +16,9 @@ interface AlodokterAPI {
         @Path("id") idUser : Int
     ) : CreateUserResponse
 
-    @GET()
-    suspend fun getArticle(){
+    @GET("articles")
+    fun getArticle() : Call<ArticleResponse>
 
-    }
     @GET()
     suspend fun getUserData(){
 

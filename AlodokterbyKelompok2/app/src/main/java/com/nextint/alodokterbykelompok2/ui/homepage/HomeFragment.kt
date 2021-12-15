@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nextint.alodokterbykelompok2.databinding.FragmentHomeBinding
@@ -12,6 +14,7 @@ import com.nextint.alodokterbykelompok2.ui.article.ArticleAdapter
 import com.nextint.alodokterbykelompok2.ui.article.ArticleViewModel
 import com.nextint.alodokterbykelompok2.ui.doctor.DoctorAdapter
 import com.nextint.alodokterbykelompok2.ui.doctor.DoctorViewModel
+import com.nextint.alodokterbykelompok2.viewmodel.ViewModelFactory
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -40,17 +43,27 @@ class HomeFragment : Fragment() {
                 adapter = doctorAdapter
             }
 
-            val vmArticle = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ArticleViewModel::class.java]
-            val articles = vmArticle.getArticle()
-
+            showProgressBar(true)
+            val factory = ViewModelFactory.getInstance(requireActivity())
+            val vmArticle = ViewModelProvider(this, factory)[ArticleViewModel::class.java]
             val articleAdapter = ArticleAdapter()
-            articleAdapter.setArticle(articles)
+            vmArticle.getArticle().observe(viewLifecycleOwner, { articles ->
+                showProgressBar(false)
+                articleAdapter.setArticle(articles)
+                //here call setOnItemClickCallback
+                articleAdapter.notifyDataSetChanged()
+            })
 
             with(binding.rvTopArticles){
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
-                adapter = articleAdapter
+                this.adapter = articleAdapter
             }
         }
+    }
+
+    private fun showProgressBar(state: Boolean){
+        binding.pbHome.isVisible = state
+        binding.rvTopArticles.isInvisible = state
     }
 }

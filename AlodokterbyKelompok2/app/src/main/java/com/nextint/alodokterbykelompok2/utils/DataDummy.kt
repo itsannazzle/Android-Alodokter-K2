@@ -1,6 +1,6 @@
 package com.nextint.alodokterbykelompok2.utils
 
-import com.nextint.alodokterbykelompok2.model.Article
+import com.nextint.alodokterbykelompok2.data.remote.response.article.Article
 import com.nextint.alodokterbykelompok2.model.Doctor
 
 object DataDummy {
@@ -54,9 +54,10 @@ object DataDummy {
                 "Lora Kerluke",
                 "http://placeimg.com/640/480",
             "2021-12-07T17:02:22.041Z",
+                "2021-12-07T17:02:22.041Z",
             "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
             "7673f424-07cf-4e98-90b9-7c061aa42894",
-            "1",
+            1,
             "Global Creative Manager")
         )
         article.add(
@@ -64,9 +65,10 @@ object DataDummy {
                 "Terrell Jakubowski",
                 "http://placeimg.com/640/480",
                 "2021-12-07T17:02:22.041Z",
+                "2021-12-07T17:02:22.041Z",
                 "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
                 "235c0d8f-9dfc-445d-9378-7d2c02c1863a",
-                "2",
+                2,
                 "Senior Directives Administrator")
         )
         return article
