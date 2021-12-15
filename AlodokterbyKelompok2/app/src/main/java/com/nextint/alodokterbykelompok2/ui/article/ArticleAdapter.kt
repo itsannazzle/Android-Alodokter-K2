@@ -35,9 +35,10 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
     class ArticleViewHolder(private val binding: ItemRvArticleBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(article: ArticleEntity){
             with(binding){
-                tvAuthor.text = article.reference
-                tvDatePublished.text = DateTimeFormat.formatDate(article.datePosted)
+                tvReference.text = article.reference
+                tvDatePublished.text = article.datePosted?.let { DateTimeFormat.formatDate(it) }
                 tvTitle.text = article.title
+                tvDesc.text = article.description
                 Glide.with(itemView.context)
                     .load(article.image)
                     .apply(

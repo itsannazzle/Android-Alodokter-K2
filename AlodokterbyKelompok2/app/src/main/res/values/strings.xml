@@ -50,18 +50,7 @@
     <string name="label_close">Close</string>
     <string name="label_service_fragment">Hello Service Fragment</string>
     <string name="label_search">Search</string>
-    <string name="lewatkan">Lewatkan</string>
-    <string name="helperNotBlank">Tidak boleh kosong</string>
-    <string name="helperEmail">Masukan email yang sah</string>
-    <string name="password_not_valid">Minimal password 8 karakter</string>
-    <string name="minLeng8">Minimal 8 karakter</string>
-    <string name="minLeng12">Minimal 12 karakter</string>
-    <string name="password_not_same">Password tidak sesuai</string>
-    <string name="username">Username</string>
-    <string name="perempuan">Perempuan</string>
-    <string name="laki_laki">Laki-laki</string>
-    <string name="tanggal_lahir">Tanggal Lahir</string>
-    <string name="nomor_telpon">Nomor telpon</string>
-    <string name="pilih_tanggal_lahir">Pilih tanggal lahir</string>
-    <string name="icondate">iconDate</string>
+    <string name="label_desc_article">For thousands of years, humans have recognized that the sun plays a role in the emergence and ...</string>
+    <string name="content_desc_image_doctor">Image Doctor</string>
+    <string name="label_dokter_kulit">Dokter Kulit</string>
 </resources>

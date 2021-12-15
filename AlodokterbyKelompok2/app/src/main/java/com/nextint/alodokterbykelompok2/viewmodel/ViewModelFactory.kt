@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.nextint.alodokterbykelompok2.data.AloRepository
 import com.nextint.alodokterbykelompok2.di.Injection
 import com.nextint.alodokterbykelompok2.ui.article.ArticleViewModel
+import com.nextint.alodokterbykelompok2.ui.doctor.DoctorViewModel
 
 class ViewModelFactory private constructor(private val aloRepository: AloRepository) : ViewModelProvider.NewInstanceFactory(){
     companion object {
@@ -24,9 +25,9 @@ class ViewModelFactory private constructor(private val aloRepository: AloReposit
             modelClass.isAssignableFrom(ArticleViewModel::class.java) -> {
                 ArticleViewModel(aloRepository) as T
             }
-//            modelClass.isAssignableFrom(TvShowViewModel::class.java) -> {
-//                TvShowViewModel(movieCatalogueRepository) as T
-//            }
+            modelClass.isAssignableFrom(DoctorViewModel::class.java) -> {
+                DoctorViewModel(aloRepository) as T
+            }
 //            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
 //                DetailViewModel(movieCatalogueRepository) as T
 //            }

@@ -31,20 +31,24 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null){
-            val vmDoctor = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DoctorViewModel::class.java]
-            val doctors = vmDoctor.getDoctor()
+            val factory = ViewModelFactory.getInstance(requireActivity())
 
+            showProgressBarDoctor(true)
+            val vmDoctor = ViewModelProvider(this, factory)[DoctorViewModel::class.java]
             val doctorAdapter = DoctorAdapter()
-            doctorAdapter.setDoctor(doctors)
-
+            vmDoctor.getDoctor().observe(viewLifecycleOwner, { doctors ->
+                showProgressBarDoctor(false)
+                doctorAdapter.setDoctor(doctors)
+                //here call setOnItemClickCallback
+                doctorAdapter.notifyDataSetChanged()
+            })
             with(binding.rvTopDoctors){
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 setHasFixedSize(true)
-                adapter = doctorAdapter
+                this.adapter = doctorAdapter
             }
 
             showProgressBar(true)
-            val factory = ViewModelFactory.getInstance(requireActivity())
             val vmArticle = ViewModelProvider(this, factory)[ArticleViewModel::class.java]
             val articleAdapter = ArticleAdapter()
             vmArticle.getArticle().observe(viewLifecycleOwner, { articles ->
@@ -53,7 +57,6 @@ class HomeFragment : Fragment() {
                 //here call setOnItemClickCallback
                 articleAdapter.notifyDataSetChanged()
             })
-
             with(binding.rvTopArticles){
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
@@ -63,7 +66,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun showProgressBar(state: Boolean){
-        binding.pbHome.isVisible = state
+        binding.pbTopArticle.isVisible = state
         binding.rvTopArticles.isInvisible = state
+    }
+
+    private fun showProgressBarDoctor(state: Boolean){
+        binding.pbDoctor.isVisible = state
+        binding.rvTopDoctors.isInvisible = state
     }
 }
