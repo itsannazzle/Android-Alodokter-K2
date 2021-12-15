@@ -108,7 +108,7 @@ class LoginFragment : Fragment() {
 
     private fun userInput() {
         val email = binding.edEmail.text.toString()
-        val password = binding.edEmail.text.toString()
+        val password = binding.edPassword.text.toString()
         val loginReq = LoginRequest(email, password)
         viewModel.postLogin(loginReq)
         viewModel.dataResponse.observe(viewLifecycleOwner, { result ->
