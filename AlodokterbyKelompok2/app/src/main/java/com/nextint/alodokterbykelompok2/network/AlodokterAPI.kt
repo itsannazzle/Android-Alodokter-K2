@@ -1,15 +1,12 @@
-package com.nextint.alodokterbykelompok2.network
+package com.nextint.alodokterbykelompok2.data.remote
 
-import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleResponse
-import com.nextint.alodokterbykelompok2.data.remote.response.doctor.DoctorResponse
 import com.nextint.alodokterbykelompok2.model.CreateUserResponse
 import com.nextint.alodokterbykelompok2.model.LoginRequest
 import com.nextint.alodokterbykelompok2.model.LoginResponse
-import retrofit2.Call
 import retrofit2.http.*
 
 interface AlodokterAPI {
-    @POST("/users")
+    @POST("/register")
     suspend fun createAccount(
         @Body dataUser : CreateUserResponse
     ) : CreateUserResponse
@@ -29,6 +26,20 @@ interface AlodokterAPI {
     suspend fun getUserData(){
 
     }
+
+    @FormUrlEncoded
+    @POST("/password/forgot")
+    suspend fun sendToken(
+        @Field("email") email : String
+    ) : BaseResponse
+
+    @POST("/password/reset")
+    suspend fun newPassword(
+        @Body newPasswordRequest: NewPasswordRequest
+    ) : BaseResponse
+
+
+
 
     @POST("/auth/login")
     suspend fun postUserLogin(
