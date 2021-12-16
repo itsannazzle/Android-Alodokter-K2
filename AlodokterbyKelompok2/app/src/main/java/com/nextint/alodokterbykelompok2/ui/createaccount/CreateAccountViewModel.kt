@@ -18,6 +18,9 @@ class CreateAccountViewModel : ViewModel() {
     private val _message : SingleLiveEvent<String> = SingleLiveEvent()
     val message : LiveData<String> = _message
 
+    private var _gender = MutableLiveData<String>()
+    val gender : LiveData<String> = _gender
+
     fun postCreateAccount(dataUser : CreateUserResponse){
         viewModelScope.launch(Dispatchers.IO) {
             _loading.postValue(true)
@@ -31,5 +34,9 @@ class CreateAccountViewModel : ViewModel() {
                 _loading.postValue(false)
             }
         }
+    }
+
+    fun setGender(gender : String?){
+        _gender.postValue(gender ?: "undefined gender")
     }
 }
