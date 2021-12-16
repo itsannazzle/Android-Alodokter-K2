@@ -80,7 +80,6 @@
         android:id="@+id/btnLogin"
         style="@style/primaryButton"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/btnHeight"
         android:layout_marginTop="@dimen/margin32"
         android:text="@string/login"
         android:enabled="true"

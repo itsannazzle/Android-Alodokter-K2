@@ -55,6 +55,7 @@
     <string name="helperEmail">Masukan email yang sah</string>
     <string name="password_not_valid">Minimal password 8 karakter</string>
     <string name="minLeng8">Minimal 8 karakter</string>
+    <string name="minLeng4">Minimal 4 karakter</string>
     <string name="minLeng12">Minimal 12 karakter</string>
     <string name="password_not_same">Password tidak sesuai</string>
     <string name="username">Username</string>
@@ -64,4 +65,9 @@
     <string name="nomor_telpon">Nomor telpon</string>
     <string name="pilih_tanggal_lahir">Pilih tanggal lahir</string>
     <string name="icondate">iconDate</string>
+    <string name="masukan_email_mu_yang_terdaftar">Masukan email mu yang terdaftar</string>
+    <string name="lanjutkan">Lanjutkan</string>
+    <string name="masukan_kode_yang_telah_kami_kirim_ke_email_mu">Masukan kode yang telah kami kirim ke email mu</string>
+    <string name="kode">Kode</string>
+    <string name="password_berhasil_diubah">Password berhasil diubah</string>
 </resources>

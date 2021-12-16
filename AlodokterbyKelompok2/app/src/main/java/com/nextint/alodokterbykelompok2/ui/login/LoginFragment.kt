@@ -13,6 +13,7 @@ import com.nextint.alodokterbykelompok2.R
 import com.nextint.alodokterbykelompok2.databinding.FragmentLoginBinding
 import com.nextint.alodokterbykelompok2.model.LoginRequest
 import com.nextint.alodokterbykelompok2.ui.createaccount.CreateAccountFragment
+import com.nextint.alodokterbykelompok2.ui.forgotpassword.EmailRecoveryFragment
 import com.nextint.alodokterbykelompok2.ui.homepage.HomePageActivity
 import com.nextint.alodokterbykelompok2.utils.ReactiveField
 import com.nextint.alodokterbykelompok2.utils.Result
@@ -54,6 +55,13 @@ class LoginFragment : Fragment() {
 
         binding.tvLewatkan.setOnClickListener {
             startActivity(Intent(requireContext(), HomePageActivity::class.java))
+        }
+
+        binding.tvForgotPassword.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.appContainer, EmailRecoveryFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 

@@ -199,8 +199,6 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCreateAccount"
             style="@style/primaryButton"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/btnHeight"
             android:layout_marginTop="@dimen/margin24"
             android:backgroundTint="@color/gsText"
             android:enabled="false"
