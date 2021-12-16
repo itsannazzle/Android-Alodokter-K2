@@ -1,5 +1,6 @@
 package com.nextint.alodokterbykelompok2.network
 
+import com.nextint.alodokterbykelompok2.data.remote.AlodokterAPI
 import com.nextint.alodokterbykelompok2.utils.RemoteConstant.ARTICLE_BASE_URL
 import com.nextint.alodokterbykelompok2.utils.RemoteConstant.BASE_URL
 import okhttp3.OkHttpClient

@@ -1,8 +1,9 @@
 package com.nextint.alodokterbykelompok2.data.remote
 
-import com.nextint.alodokterbykelompok2.model.CreateUserResponse
-import com.nextint.alodokterbykelompok2.model.LoginRequest
-import com.nextint.alodokterbykelompok2.model.LoginResponse
+import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleResponse
+import com.nextint.alodokterbykelompok2.data.remote.response.doctor.DoctorResponse
+import com.nextint.alodokterbykelompok2.model.*
+import retrofit2.Call
 import retrofit2.http.*
 
 interface AlodokterAPI {

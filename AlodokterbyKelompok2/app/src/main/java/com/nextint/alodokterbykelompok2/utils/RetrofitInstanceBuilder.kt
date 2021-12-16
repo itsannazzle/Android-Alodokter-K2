@@ -1,6 +1,6 @@
 package com.nextint.alodokterbykelompok2.utils
 
-import com.nextint.alodokterbykelompok2.network.AlodokterAPI
+import com.nextint.alodokterbykelompok2.data.remote.AlodokterAPI
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

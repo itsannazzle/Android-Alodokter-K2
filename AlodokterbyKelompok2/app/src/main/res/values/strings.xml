@@ -53,8 +53,6 @@
     <string name="label_desc_article">For thousands of years, humans have recognized that the sun plays a role in the emergence and ...</string>
     <string name="content_desc_image_doctor">Image Doctor</string>
     <string name="label_dokter_kulit">Dokter Kulit</string>
-    <string name="minLeng8">Minimal 8 karakter</string>
-    <string name="minLeng12">Minimal 12 karakter</string>
     <string name="lewatkan">Lewatkan</string>
     <string name="helperNotBlank">Tidak boleh kosong</string>
     <string name="helperEmail">Masukan email yang sah</string>
