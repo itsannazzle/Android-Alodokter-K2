@@ -3,6 +3,8 @@ package com.nextint.alodokterbykelompok2.network
 import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleResponse
 import com.nextint.alodokterbykelompok2.data.remote.response.doctor.DoctorResponse
 import com.nextint.alodokterbykelompok2.model.CreateUserResponse
+import com.nextint.alodokterbykelompok2.model.LoginRequest
+import com.nextint.alodokterbykelompok2.model.LoginResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -27,8 +29,9 @@ interface AlodokterAPI {
     suspend fun getUserData(){
 
     }
-    @POST()
-    suspend fun postUserLogin(){
 
-    }
+    @POST("/auth/login")
+    suspend fun postUserLogin(
+        @Body loginRequest: LoginRequest
+        ) : LoginResponse
 }
