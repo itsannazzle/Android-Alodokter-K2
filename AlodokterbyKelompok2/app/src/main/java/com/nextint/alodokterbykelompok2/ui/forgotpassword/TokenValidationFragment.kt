@@ -34,6 +34,7 @@ class TokenValidationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         inputStream()
+        initListener()
     }
 
     @SuppressLint("CheckResult")

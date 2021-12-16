@@ -24,12 +24,12 @@ interface AlodokterAPI {
     }
 
     @FormUrlEncoded
-    @POST("/forgot")
+    @POST("/password/forgot")
     suspend fun sendToken(
         @Field("email") email : String
     ) : BaseResponse
 
-    @POST("/reset")
+    @POST("/password/reset")
     suspend fun newPassword(
         @Body newPasswordRequest: NewPasswordRequest
     ) : BaseResponse
