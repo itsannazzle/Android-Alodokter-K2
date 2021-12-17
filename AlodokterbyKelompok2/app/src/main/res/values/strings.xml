@@ -27,9 +27,8 @@
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
     <string name="birthday">Date of birth</string>
-    <string name="height">Height (CM)</string>
-    <string name="weight">Weight (KG)</string>
-    <string name="blood_type">Blood type</string>
+    <string name="username">Username</string>
+    <string name="phone_number">Phone Number</string>
     <string name="btn_continue">Continue</string>
     <string name="name">Name</string>
     <string name="content_description_profile_image">Profile Image</string>

@@ -1,7 +1,6 @@
 package com.nextint.alodokterbykelompok2.data.remote
 
-import com.nextint.alodokterbykelompok2.model.CreateUserResponse
-import com.nextint.alodokterbykelompok2.model.EditUserResponse
+import com.nextint.alodokterbykelompok2.model.*
 import retrofit2.http.*
 
 interface AlodokterAPI {
@@ -26,14 +25,14 @@ interface AlodokterAPI {
     }
 
     @GET("/users/{username}")
-    suspend fun getUserData(
+    suspend fun getUser(
         @Header(value = "Authorization") authorization: String,
         @Path(value = "username") username: String
-    ): CreateUserResponse
+    ): UserResponse
 
     @FormUrlEncoded
     @POST("/register")
-    suspend fun completeUserData(@FieldMap request: Map<String, String>): CreateUserResponse
+    suspend fun completeUserData(@FieldMap request: Map<String, String>): UserResponse
 
     @FormUrlEncoded
     @PUT("/users/{username}")
@@ -45,22 +44,19 @@ interface AlodokterAPI {
 
     //   [START] Doctor
 
-    @GET("/doctors")
-    suspend fun getDoctorData(): CreateUserResponse
-
     @GET("/doctors/{nip}")
-    suspend fun getDetailDoctor(@Path(value = "nip") nip: String): CreateUserResponse
+    suspend fun getDetailDoctor(@Path(value = "nip") nip: String): DoctorResponse
 
     @FormUrlEncoded
     @POST("/doctors")
-    suspend fun completeDoctorData(@FieldMap request: Map<String, String>): CreateUserResponse
+    suspend fun completeDoctorData(@FieldMap request: Map<String, String>): DoctorResponse
 
     @FormUrlEncoded
     @PUT("/doctors/{nip}")
     suspend fun editDoctorData(
         @Path(value = "nip") nip: String,
         @FieldMap request: Map<String, String>
-    ): CreateUserResponse
+    ): EditDoctorResponse
 
     //   [END] Doctor
 

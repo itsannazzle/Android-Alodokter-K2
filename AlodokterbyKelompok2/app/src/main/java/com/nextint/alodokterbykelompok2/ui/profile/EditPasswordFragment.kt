@@ -5,18 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.nextint.alodokterbykelompok2.R
-import com.nextint.alodokterbykelompok2.databinding.FragmentProfileBinding
+import com.nextint.alodokterbykelompok2.databinding.FragmentChangePasswordBinding
 import com.nextint.alodokterbykelompok2.ui.login.LoginFragment
 
-class ProfileFragment : Fragment() {
-    private lateinit var binding: FragmentProfileBinding
+class EditPasswordFragment : Fragment() {
+    private lateinit var binding: FragmentChangePasswordBinding
+    private val viewModel: ProfileViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentProfileBinding.inflate(inflater, container, false)
+        binding = FragmentChangePasswordBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -26,15 +28,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun initListener(savedInstanceState: Bundle?) {
-        binding.btnEditProfile.setOnClickListener {
-            if (savedInstanceState == null) {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.appContainer, LoginFragment())
-                    .addToBackStack(null)
-                    .commit()
-            }
-        }
-        binding.btnChangePass.setOnClickListener {
+        binding.btnSave.setOnClickListener {
             if (savedInstanceState == null) {
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.appContainer, LoginFragment())

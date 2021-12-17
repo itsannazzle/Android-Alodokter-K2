@@ -2,9 +2,9 @@ package com.nextint.alodokterbykelompok2.model
 
 import com.google.gson.annotations.SerializedName
 
-data class EditUserResponse(
+data class EditDoctorResponse(
     @field:SerializedName("data")
-    val data: UserResponse? = null,
+    val data: DoctorResponse? = null,
 
     @field:SerializedName("meta")
     val meta: Status? = null,
