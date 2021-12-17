@@ -8,11 +8,15 @@ import com.bumptech.glide.request.RequestOptions
 import com.nextint.alodokterbykelompok2.R
 import com.nextint.alodokterbykelompok2.data.local.ArticleEntity
 import com.nextint.alodokterbykelompok2.databinding.ItemRvArticleBinding
-import com.nextint.alodokterbykelompok2.data.remote.response.article.Article
 import com.nextint.alodokterbykelompok2.utils.DateTimeFormat
 
 class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
     private var listArticle = ArrayList<ArticleEntity>()
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     fun setArticle(articles: List<ArticleEntity>?) {
         if (articles.isNullOrEmpty()) return
@@ -32,7 +36,7 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
 
     override fun getItemCount(): Int = listArticle.size
 
-    class ArticleViewHolder(private val binding: ItemRvArticleBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ArticleViewHolder(private val binding: ItemRvArticleBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(article: ArticleEntity){
             with(binding){
                 tvReference.text = article.reference
@@ -45,8 +49,14 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
                         RequestOptions.placeholderOf(R.drawable.image_article)
                             .error(R.drawable.no_article_image)
                     ).into(ivPictureArticle)
+
+                itemView.setOnClickListener { onItemClickCallback.onItemClicked(article.id.toString()) }
             }
         }
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(id: String)
     }
 
 }

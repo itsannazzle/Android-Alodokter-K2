@@ -28,9 +28,6 @@ class ViewModelFactory private constructor(private val aloRepository: AloReposit
             modelClass.isAssignableFrom(DoctorViewModel::class.java) -> {
                 DoctorViewModel(aloRepository) as T
             }
-//            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
-//                DetailViewModel(movieCatalogueRepository) as T
-//            }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }
 

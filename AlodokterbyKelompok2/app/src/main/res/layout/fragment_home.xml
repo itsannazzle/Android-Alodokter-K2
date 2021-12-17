@@ -30,7 +30,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTopDoctors"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/spacing_110"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_10"
             android:orientation="horizontal"
             android:paddingStart="@dimen/spacing_24"

@@ -1,5 +1,6 @@
 package com.nextint.alodokterbykelompok2.data.remote
 
+import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleDetailResponse
 import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleResponse
 import com.nextint.alodokterbykelompok2.data.remote.response.doctor.DoctorResponse
 import com.nextint.alodokterbykelompok2.model.*
@@ -17,8 +18,13 @@ interface AlodokterAPI {
         @Path("id") idUser : Int
     ) : CreateUserResponse
 
-    @GET("articles")
+    @GET("api/v1/articles")
     fun getArticle() : Call<ArticleResponse>
+
+    @GET("api/v1/articles/{id}")
+    fun getArticleDetail(
+        @Path("id") id: String
+    ) : Call<ArticleDetailResponse>
 
     @GET("doctors")
     fun getDoctor() : Call<DoctorResponse>
