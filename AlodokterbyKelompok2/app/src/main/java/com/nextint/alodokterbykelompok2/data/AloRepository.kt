@@ -3,11 +3,12 @@ package com.nextint.alodokterbykelompok2.data
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.nextint.alodokterbykelompok2.data.local.ArticleEntity
+import com.nextint.alodokterbykelompok2.data.local.DetailArticleEntity
 import com.nextint.alodokterbykelompok2.data.local.DoctorEntity
 import com.nextint.alodokterbykelompok2.data.remote.RemoteDataSource
 import com.nextint.alodokterbykelompok2.data.remote.response.article.Article
+import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleDetailResponse
 import com.nextint.alodokterbykelompok2.data.remote.response.doctor.Doctor
-import com.nextint.alodokterbykelompok2.model.CreateUserResponse
 
 class AloRepository private constructor(private val remoteDataSource: RemoteDataSource) : AloDataSource{
     companion object {
@@ -37,6 +38,29 @@ class AloRepository private constructor(private val remoteDataSource: RemoteData
             }
         })
         return articleResult
+    }
+
+    override fun getDetailArticle(articleId: String): LiveData<DetailArticleEntity> {
+        val articleDetailResult = MutableLiveData<DetailArticleEntity>()
+
+        remoteDataSource.getDetailArticle(object : RemoteDataSource.LoadDetailArticleCallback {
+            override fun onDetailArticleLoaded(articleDetail: ArticleDetailResponse?) {
+                if (articleDetail != null){
+                    with(articleDetail) {
+                        val detailArticle = DetailArticleEntity(
+                            reference = reference,
+                            image = image,
+                            datePosted = datePosted,
+                            description = description,
+                            id = id,
+                            title = title
+                        )
+                        articleDetailResult.postValue(detailArticle)
+                    }
+                }
+            }
+        }, articleId)
+        return articleDetailResult
     }
 
     override fun getDoctors(): LiveData<List<DoctorEntity>> {

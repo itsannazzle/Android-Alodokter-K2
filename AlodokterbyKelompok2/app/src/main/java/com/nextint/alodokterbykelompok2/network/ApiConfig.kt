@@ -21,18 +21,5 @@ class ApiConfig {
                 .build()
             return retrofit.create(AlodokterAPI::class.java)
         }
-
-        fun getArticleAPI(): AlodokterAPI {
-            val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-            val client = OkHttpClient.Builder()
-                .addInterceptor(loggingInterceptor)
-                .build()
-            val retrofit = Retrofit.Builder()
-                .baseUrl(ARTICLE_BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .build()
-            return retrofit.create(AlodokterAPI::class.java)
-        }
     }
 }

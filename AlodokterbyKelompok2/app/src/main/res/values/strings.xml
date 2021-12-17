@@ -53,4 +53,10 @@
     <string name="label_desc_article">For thousands of years, humans have recognized that the sun plays a role in the emergence and ...</string>
     <string name="content_desc_image_doctor">Image Doctor</string>
     <string name="label_dokter_kulit">Dokter Kulit</string>
+    <string name="content_desc_total_liked">Total Liked</string>
+    <string name="label_liked_count">10.4k</string>
+    <string name="label_comments_count">45 comments</string>
+    <string name="label_detail_article">Detail Article</string>
+    <string name="label_share">Share</string>
+    <string name="label_save">Save</string>
 </resources>

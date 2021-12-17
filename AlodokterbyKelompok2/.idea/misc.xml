@@ -6,6 +6,7 @@
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/drawable/ic_article.xml" value="0.2265625" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/drawable/ic_bg_rounded_corner_white.xml" value="0.2265625" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/drawable/ic_bg_rounded_corner_white50.xml" value="0.2265625" />
+        <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/drawable/ic_btnsearch.xml" value="0.19863013698630136" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/drawable/ic_home.xml" value="0.2265625" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/drawable/splash_theme.xml" value="0.2265625" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/activity_home_page.xml" value="0.22" />
@@ -16,6 +17,7 @@
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_appointment.xml" value="0.19322916666666667" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_article.xml" value="0.20625" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_create_account.xml" value="0.22" />
+        <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_detail_article.xml" value="0.28746594005449594" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_onboarding1.xml" value="0.16" />
@@ -28,6 +30,7 @@
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/item_rv_top_doctor.xml" value="0.5" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/menu/menu_app_bar.xml" value="0.21041666666666667" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/menu/menu_bottom_nav.xml" value="0.21041666666666667" />
+        <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/menu/menu_detail_article.xml" value="0.18703703703703703" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/menu/menu_drawer_nav.xml" value="0.20092592592592592" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/menu/menu_nav.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.13489583333333333" />
