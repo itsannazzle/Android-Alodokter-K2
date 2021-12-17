@@ -39,7 +39,7 @@ class DetailArticleFragment : Fragment() {
             val factory = ViewModelFactory.getInstance(requireActivity())
             val viewModel = ViewModelProvider(this, factory)[ArticleViewModel::class.java]
             val dataId = arguments?.getString("id")
-            Log.d("DETAIL", "Tes nerima id: $dataId")
+
             if (dataId != null) {
                 viewModel.setDetail(dataId)
                 viewModel.getDetail().observe(viewLifecycleOwner, { detail ->

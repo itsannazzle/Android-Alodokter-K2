@@ -50,7 +50,7 @@
     <string name="label_close">Close</string>
     <string name="label_service_fragment">Hello Service Fragment</string>
     <string name="label_search">Search</string>
-    <string name="label_desc_article">For thousands of years, humans have recognized that the sun plays a role in the emergence and ...</string>
+    <string name="label_desc_article">For thousands of years, humans have recognized that the sun plays a role in the emergence and …</string>
     <string name="content_desc_image_doctor">Image Doctor</string>
     <string name="label_dokter_kulit">Dokter Kulit</string>
     <string name="content_desc_total_liked">Total Liked</string>
@@ -59,4 +59,7 @@
     <string name="label_detail_article">Detail Article</string>
     <string name="label_share">Share</string>
     <string name="label_save">Save</string>
+    <string name="label_search_hint">Search something</string>
+    <string name="label_hasil_pencarian_untuk">Hasil pencarian untuk</string>
+    <string name="string_hasil_pencarian">Hasil pencarian untuk: %s</string>
 </resources>
