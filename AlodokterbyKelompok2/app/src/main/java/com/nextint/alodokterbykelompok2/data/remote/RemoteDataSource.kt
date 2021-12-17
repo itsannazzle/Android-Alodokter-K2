@@ -4,6 +4,7 @@ import android.util.Log
 import com.nextint.alodokterbykelompok2.data.remote.response.article.Article
 import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleDetailResponse
 import com.nextint.alodokterbykelompok2.data.remote.response.article.ArticleResponse
+import com.nextint.alodokterbykelompok2.data.remote.response.article.SearchArticleResponse
 import com.nextint.alodokterbykelompok2.data.remote.response.doctor.Doctor
 import com.nextint.alodokterbykelompok2.data.remote.response.doctor.DoctorResponse
 import com.nextint.alodokterbykelompok2.network.ApiConfig
@@ -50,6 +51,25 @@ class RemoteDataSource {
 
             override fun onFailure(call: Call<ArticleDetailResponse>, t: Throwable) {
                 Log.e("RemoteDataSource", "getArticleDetail onFailure : ${t.message}")
+                EspressoIdlingResource.decrement()
+            }
+        })
+    }
+
+    fun getSearchArticle(callback: LoadArticlesCallback, articleTitle: String) {
+        EspressoIdlingResource.increment()
+        val client = ApiConfig.getAlodokterAPI().getArticleByTitle(articleTitle)
+        client.enqueue(object : Callback<SearchArticleResponse>{
+            override fun onResponse(
+                call: Call<SearchArticleResponse>,
+                response: Response<SearchArticleResponse>
+            ) {
+                callback.onArticlesLoaded(response.body()?.data)
+                EspressoIdlingResource.decrement()
+            }
+
+            override fun onFailure(call: Call<SearchArticleResponse>, t: Throwable) {
+                Log.e("RemoteDataSource", "getSearchArticle onFailure : ${t.message}")
                 EspressoIdlingResource.decrement()
             }
         })

@@ -47,7 +47,7 @@ class HomePageActivity : AppCompatActivity() {
             mToolbar.isVisible = arguments?. getBoolean("ShowAppBar", true) == true
             val drawerMenu = arrayOf(R.id.nav_profile, R.id.nav_payment_method, R.id.nav_appointment, R.id.nav_saved)
             val bottomMenu = arrayOf(R.id.nav_home, R.id.nav_service, R.id.nav_article, R.id.nav_messages)
-            val child = arrayOf(R.id.nav_detail_article)
+            val child = arrayOf(R.id.nav_detail_article, R.id.nav_search)
             when (destination.id) {
                 in drawerMenu -> bottomNavView.visibility = View.GONE
                 in child -> bottomNavView.visibility = View.GONE
@@ -64,15 +64,7 @@ class HomePageActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_app_bar, menu)
-        val searchItem: MenuItem = menu.findItem(R.id.menuSearch)
-//        val searchView: SearchView = searchItem.actionView as SearchView
-//        searchQuery(searchView)
-//
         return super.onCreateOptionsMenu(menu)
-    }
-
-    private fun searchQuery(searchView: SearchView) {
-
     }
 
     //navigate item to destination

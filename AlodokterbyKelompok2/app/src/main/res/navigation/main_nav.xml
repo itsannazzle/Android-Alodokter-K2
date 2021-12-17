@@ -37,6 +37,10 @@
                 android:name="id_article"
                 app:argType="string" />
         </action>
+        <action
+            android:id="@+id/action_nav_home_to_nav_search"
+            app:destination="@id/nav_search"
+            app:enterAnim="@animator/nav_default_enter_anim" />
     </fragment>
 
     <fragment
@@ -97,6 +101,23 @@
         <argument
             android:name="ShowAppBar"
             android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.nextint.alodokterbykelompok2.ui.search.SearchFragment"
+        android:label=""
+        tools:layout="@layout/fragment_search">
+        <argument
+            android:name="ShowAppBar"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_nav_search_to_nav_detail_article"
+            app:destination="@id/nav_detail_article">
+            <argument
+                android:name="id_article"
+                app:argType="string" />
+        </action>
     </fragment>
 
 </navigation>

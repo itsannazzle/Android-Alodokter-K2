@@ -63,6 +63,26 @@ class AloRepository private constructor(private val remoteDataSource: RemoteData
         return articleDetailResult
     }
 
+    override fun getSearchArticle(articleTitle: String): LiveData<List<ArticleEntity>> {
+        val articleResult = MutableLiveData<List<ArticleEntity>>()
+
+        remoteDataSource.getSearchArticle(object : RemoteDataSource.LoadArticlesCallback{
+            override fun onArticlesLoaded(articles: List<Article>?) {
+                val articleList = ArrayList<ArticleEntity>()
+                if (articles != null){
+                    for (response in articles){
+                        with(response){
+                            val article = ArticleEntity(reference, image, datePosted, description, id, title)
+                            articleList.add(article)
+                        }
+                    }
+                    articleResult.postValue(articleList)
+                }
+            }
+        }, articleTitle)
+        return articleResult
+    }
+
     override fun getDoctors(): LiveData<List<DoctorEntity>> {
         val doctorResult = MutableLiveData<List<DoctorEntity>>()
 
