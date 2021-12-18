@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuShare"
+        android:icon="@drawable/ic_btn_share"
+        android:title="@string/label_share"
+        android:contentDescription="@string/label_share"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menuSave"
+        android:icon="@drawable/ic_btn_save"
+        android:title="@string/label_save"
+        android:contentDescription="@string/label_save"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import androidx.core.view.MenuItemCompat
+import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -40,11 +43,14 @@ class HomePageActivity : AppCompatActivity() {
         val bottomNavView: BottomNavigationView = findViewById(R.id.bottom_nav)
         bottomNavView.setupWithNavController(navController)
 
-        navController.addOnDestinationChangedListener{ _, destination, _ ->
+        navController.addOnDestinationChangedListener{ _, destination, arguments ->
+            mToolbar.isVisible = arguments?. getBoolean("ShowAppBar", true) == true
             val drawerMenu = arrayOf(R.id.nav_profile, R.id.nav_payment_method, R.id.nav_appointment, R.id.nav_saved)
             val bottomMenu = arrayOf(R.id.nav_home, R.id.nav_service, R.id.nav_article, R.id.nav_messages)
+            val child = arrayOf(R.id.nav_detail_article, R.id.nav_search)
             when (destination.id) {
                 in drawerMenu -> bottomNavView.visibility = View.GONE
+                in child -> bottomNavView.visibility = View.GONE
                 in bottomMenu -> bottomNavView.visibility = View.VISIBLE
             }
         }
@@ -58,7 +64,7 @@ class HomePageActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_app_bar, menu)
-        return true
+        return super.onCreateOptionsMenu(menu)
     }
 
     //navigate item to destination
