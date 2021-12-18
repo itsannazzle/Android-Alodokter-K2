@@ -18,22 +18,28 @@ import com.nextint.alodokterbykelompok2.ui.article.ArticleAdapter
 import com.nextint.alodokterbykelompok2.ui.article.ArticleViewModel
 import com.nextint.alodokterbykelompok2.ui.doctor.DoctorAdapter
 import com.nextint.alodokterbykelompok2.ui.doctor.DoctorViewModel
+import com.nextint.alodokterbykelompok2.utils.SessionManager
+import com.nextint.alodokterbykelompok2.utils.SessionRepository
 import com.nextint.alodokterbykelompok2.viewmodel.ViewModelFactory
 
 class HomeFragment : Fragment(), ArticleAdapter.OnItemClickCallback {
     private lateinit var binding: FragmentHomeBinding
+    lateinit var sessionRepository: SessionRepository
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val sesi = SessionManager(requireContext())
+        sessionRepository = SessionRepository.getInstance(sesi)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.tvWelcomeUser.text = getString(R.string.selamatdatang, sessionRepository.getUsername())
         if (activity != null){
             val factory = ViewModelFactory.getInstance(requireActivity())
 

@@ -2,18 +2,16 @@ package com.nextint.alodokterbykelompok2.ui.forgotpassword
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.nextint.alodokterbykelompok2.R
 import com.nextint.alodokterbykelompok2.databinding.FragmentEmailRecoveryBinding
-import com.nextint.alodokterbykelompok2.ui.createaccount.CreateAccountFragment
 import com.nextint.alodokterbykelompok2.utils.ReactiveField
 import com.nextint.alodokterbykelompok2.utils.Result
-import io.reactivex.Observable
 
 
 class EmailRecoveryFragment : Fragment() {

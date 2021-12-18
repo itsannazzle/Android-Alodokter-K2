@@ -9,7 +9,7 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface AlodokterAPI {
-    @POST("/register")
+    @POST("/users")
     suspend fun createAccount(
         @Body dataUser : CreateUserResponse
     ) : CreateUserResponse
