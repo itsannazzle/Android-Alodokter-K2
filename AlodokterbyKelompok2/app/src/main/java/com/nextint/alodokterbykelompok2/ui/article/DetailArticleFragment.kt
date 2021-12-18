@@ -1,7 +1,6 @@
 package com.nextint.alodokterbykelompok2.ui.article
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.core.view.isVisible
@@ -17,7 +16,7 @@ import com.nextint.alodokterbykelompok2.databinding.FragmentDetailArticleBinding
 import com.nextint.alodokterbykelompok2.utils.DateTimeFormat
 import com.nextint.alodokterbykelompok2.viewmodel.ViewModelFactory
 
-class DetailArticleFragment : Fragment() {
+class DetailArticleFragment : Fragment(R.layout.fragment_detail_article) {
     private lateinit var binding: FragmentDetailArticleBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

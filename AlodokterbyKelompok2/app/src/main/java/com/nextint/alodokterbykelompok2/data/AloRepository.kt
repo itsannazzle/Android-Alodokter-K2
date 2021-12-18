@@ -102,6 +102,5 @@ class AloRepository private constructor(private val remoteDataSource: RemoteData
         })
         return doctorResult
     }
-
 }
 

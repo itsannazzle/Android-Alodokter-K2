@@ -83,4 +83,10 @@
     <string name="label_search_hint">Search something</string>
     <string name="label_hasil_pencarian_untuk">Hasil pencarian untuk</string>
     <string name="string_hasil_pencarian">Hasil pencarian untuk: %s</string>
+    <string name="label_NIP">NIP</string>
+    <string name="namadokter">NAMA DOKTER</string>
+    <string name="spesialis">spesialis</string>
+    <string name="reviews">384 Reviews</string>
+    <string name="label_years_of_experience">•Years of Experience</string>
+    <string name="label_desc_Dokter">Deskripsi Dokter</string>
 </resources>
