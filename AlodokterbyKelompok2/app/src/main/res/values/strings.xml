@@ -73,4 +73,5 @@
     <string name="masukan_kode_yang_telah_kami_kirim_ke_email_mu">Masukan kode yang telah kami kirim ke email mu</string>
     <string name="kode">Kode</string>
     <string name="password_berhasil_diubah">Password berhasil diubah</string>
+    <string name="selamat_datang">Selamat datang %1$s</string>
 </resources>
