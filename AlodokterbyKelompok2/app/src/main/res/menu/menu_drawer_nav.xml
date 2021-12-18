@@ -6,25 +6,25 @@
             android:enabled="true"
             android:title="@string/label_profile"
             android:icon="@drawable/ic_outline_person_24_white" />
-        <item
-            android:id="@+id/nav_payment_method"
-            android:enabled="true"
-            android:title="@string/label_payment_methods"
-            android:icon="@drawable/ic_outline_account_balance_wallet_24_white"/>
-        <item
-            android:id="@+id/nav_saved"
-            android:enabled="true"
-            android:title="@string/label_saved"
-            android:icon="@drawable/ic_outline_bookmark_24_white"/>
-        <item
-            android:id="@+id/nav_appointment"
-            android:enabled="true"
-            android:title="@string/label_appointment_date"
-            android:icon="@drawable/ic_clipboard_tick_24_white"/>
+<!--        <item-->
+<!--            android:id="@+id/nav_payment_method"-->
+<!--            android:enabled="true"-->
+<!--            android:title="@string/label_payment_methods"-->
+<!--            android:icon="@drawable/ic_outline_account_balance_wallet_24_white"/>-->
+<!--        <item-->
+<!--            android:id="@+id/nav_saved"-->
+<!--            android:enabled="true"-->
+<!--            android:title="@string/label_saved"-->
+<!--            android:icon="@drawable/ic_outline_bookmark_24_white"/>-->
+<!--        <item-->
+<!--            android:id="@+id/nav_appointment"-->
+<!--            android:enabled="true"-->
+<!--            android:title="@string/label_appointment_date"-->
+<!--            android:icon="@drawable/ic_clipboard_tick_24_white"/>-->
     </group>
-
     <item
         android:id="@+id/nav_logout"
         android:enabled="true"
-        android:title="@string/label_logout" />
+        android:title="@string/label_logout"
+        android:icon="@drawable/ic_outline_exit_to_app_24_red"/>
 </menu>
