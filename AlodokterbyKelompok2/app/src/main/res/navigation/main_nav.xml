@@ -98,7 +98,7 @@
 
     <fragment
         android:id="@+id/nav_detail_article"
-        android:name="com.nextint.alodokterbykelompok2.ui.article.DetailArticleFragment"
+        android:name="com.nextint.alodokterbykelompok2.ui.article.DetaildokterFragment"
         android:label="@string/label_detail_article"
         tools:layout="@layout/fragment_detail_article">
         <argument

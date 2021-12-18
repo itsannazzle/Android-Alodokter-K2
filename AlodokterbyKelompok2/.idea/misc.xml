@@ -31,6 +31,13 @@
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/menu/menu_app_bar.xml" value="0.21041666666666667" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/menu/menu_bottom_nav.xml" value="0.21041666666666667" />
         <entry key="..\:/Bootcamp Alodokter/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/menu/menu_nav.xml" value="0.21041666666666667" />
+        <entry key="..\:/Devs/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/drawable/ic_bintangkecil.xml" value="0.12604166666666666" />
+        <entry key="..\:/Devs/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_detail_article.xml" value="0.2" />
+        <entry key="..\:/Devs/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_detaildokter.xml" value="0.33" />
+        <entry key="..\:/Devs/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/fragment_service.xml" value="0.10989583333333333" />
+        <entry key="..\:/Devs/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/item_rv_article.xml" value="0.10989583333333333" />
+        <entry key="..\:/Devs/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/item_rv_doctors.xml" value="0.6268292682926829" />
+        <entry key="..\:/Devs/Android-Alodokter-K2/AlodokterbyKelompok2/app/src/main/res/layout/item_rv_top_doctor.xml" value="0.10989583333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.13489583333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_logo_splash.xml" value="0.15830618892508144" />
