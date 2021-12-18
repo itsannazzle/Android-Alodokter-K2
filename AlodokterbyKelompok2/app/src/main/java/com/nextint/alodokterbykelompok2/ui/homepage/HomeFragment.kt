@@ -66,6 +66,10 @@ class HomeFragment : Fragment(), ArticleAdapter.OnItemClickCallback {
                 setHasFixedSize(true)
                 this.adapter = articleAdapter
             }
+
+            binding.tvSeeAllArticles.setOnClickListener {
+                view.findNavController().navigate(R.id.nav_article)
+            }
         }
     }
 

@@ -82,4 +82,5 @@
     <string name="label_search_hint">Search something</string>
     <string name="label_hasil_pencarian_untuk">Hasil pencarian untuk</string>
     <string name="string_hasil_pencarian">Hasil pencarian untuk: %s</string>
+    <string name="label_dokter">Dokter</string>
 </resources>

@@ -24,12 +24,12 @@
         <action
             android:id="@+id/action_nav_home_to_nav_profile"
             app:destination="@id/nav_profile" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_appointment"
-            app:destination="@id/nav_appointment" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_payment_method"
-            app:destination="@id/nav_payment_method" />
+<!--        <action-->
+<!--            android:id="@+id/action_nav_home_to_nav_appointment"-->
+<!--            app:destination="@id/nav_appointment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_nav_home_to_nav_payment_method"-->
+<!--            app:destination="@id/nav_payment_method" />-->
         <action
             android:id="@+id/action_nav_home_to_nav_detail_article"
             app:destination="@id/nav_detail_article">
@@ -53,25 +53,25 @@
             android:defaultValue="false" />
     </fragment>
 
-    <fragment
-        android:id="@+id/nav_payment_method"
-        android:name="com.nextint.alodokterbykelompok2.ui.paymentmethod.PaymentMethodFragment"
-        android:label="@string/label_payment_methods"
-        tools:layout="@layout/fragment_payment_method">
-        <argument
-            android:name="ShowAppBar"
-            android:defaultValue="false" />
-    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/nav_payment_method"-->
+<!--        android:name="com.nextint.alodokterbykelompok2.ui.paymentmethod.PaymentMethodFragment"-->
+<!--        android:label="@string/label_payment_methods"-->
+<!--        tools:layout="@layout/fragment_payment_method">-->
+<!--        <argument-->
+<!--            android:name="ShowAppBar"-->
+<!--            android:defaultValue="false" />-->
+<!--    </fragment>-->
 
-    <fragment
-        android:id="@+id/nav_appointment"
-        android:name="com.nextint.alodokterbykelompok2.ui.appointment.AppointmentFragment"
-        android:label="@string/label_appointment_date"
-        tools:layout="@layout/fragment_appointment">
-        <argument
-            android:name="ShowAppBar"
-            android:defaultValue="false" />
-    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/nav_appointment"-->
+<!--        android:name="com.nextint.alodokterbykelompok2.ui.appointment.AppointmentFragment"-->
+<!--        android:label="@string/label_appointment_date"-->
+<!--        tools:layout="@layout/fragment_appointment">-->
+<!--        <argument-->
+<!--            android:name="ShowAppBar"-->
+<!--            android:defaultValue="false" />-->
+<!--    </fragment>-->
 
     <fragment
         android:id="@+id/nav_service"
