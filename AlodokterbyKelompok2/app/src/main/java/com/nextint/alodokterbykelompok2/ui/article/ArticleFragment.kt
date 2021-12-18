@@ -1,60 +1,56 @@
 package com.nextint.alodokterbykelompok2.ui.article
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.core.view.isInvisible
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.nextint.alodokterbykelompok2.R
+import com.nextint.alodokterbykelompok2.databinding.FragmentArticleBinding
+import com.nextint.alodokterbykelompok2.viewmodel.ViewModelFactory
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ArticleFragment : Fragment(R.layout.fragment_article),  ArticleAdapter.OnItemClickCallback {
+    private lateinit var binding: FragmentArticleBinding
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentArticleBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ArticleFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ArticleFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val factory = ViewModelFactory.getInstance(requireActivity())
+        val vmArticle = ViewModelProvider(this, factory)[ArticleViewModel::class.java]
+        val articleAdapter = ArticleAdapter()
+        vmArticle.getArticle().observe(viewLifecycleOwner, { articles ->
+            showProgressBar(false)
+            articleAdapter.setArticle(articles)
+            articleAdapter.setOnItemClickCallback(this)
+            articleAdapter.notifyDataSetChanged()
+        })
+        with(binding.rvArticles){
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            this.adapter = articleAdapter
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_article, container, false)
+    override fun onItemClicked(id: String) {
+        Log.d("HOME", "Tes Klik id: $id")
+        val bundle = bundleOf("id" to id)
+        view?.findNavController()?.navigate(R.id.nav_detail_article, bundle)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ArticleFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ArticleFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun showProgressBar(state: Boolean){
+        binding.rvArticles.isInvisible = state
     }
 }

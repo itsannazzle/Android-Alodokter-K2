@@ -91,6 +91,9 @@
         <argument
             android:name="ShowAppBar"
             android:defaultValue="true" />
+        <action
+            android:id="@+id/action_nav_article_to_nav_detail_article"
+            app:destination="@id/nav_detail_article" />
     </fragment>
 
     <fragment
