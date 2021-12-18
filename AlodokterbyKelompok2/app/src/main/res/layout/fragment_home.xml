@@ -175,7 +175,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin16"
             android:layout_marginTop="@dimen/margin16"
-            android:text="@string/selamat_datang"
+            android:text="@string/selamatdatang"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

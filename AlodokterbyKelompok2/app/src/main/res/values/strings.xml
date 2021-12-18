@@ -73,9 +73,7 @@
     <string name="masukan_kode_yang_telah_kami_kirim_ke_email_mu">Masukan kode yang telah kami kirim ke email mu</string>
     <string name="kode">Kode</string>
     <string name="password_berhasil_diubah">Password berhasil diubah</string>
-    <string name="label_desc_article">For thousands of years, humans have recognized that the sun plays a role in the emergence and …</string>
-    <string name="content_desc_image_doctor">Image Doctor</string>
-    <string name="label_dokter_kulit">Dokter Kulit</string>
+    <string name="selamatdatang">Selamat datang %1$s</string>
     <string name="content_desc_total_liked">Total Liked</string>
     <string name="label_liked_count">10.4k</string>
     <string name="label_comments_count">45 comments</string>

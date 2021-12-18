@@ -39,7 +39,7 @@ class HomeFragment : Fragment(), ArticleAdapter.OnItemClickCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvWelcomeUser.text = getString(R.string.selamat_datang, sessionRepository.getUsername())
+        binding.tvWelcomeUser.text = getString(R.string.selamatdatang, sessionRepository.getUsername())
         if (activity != null){
             val factory = ViewModelFactory.getInstance(requireActivity())
 
