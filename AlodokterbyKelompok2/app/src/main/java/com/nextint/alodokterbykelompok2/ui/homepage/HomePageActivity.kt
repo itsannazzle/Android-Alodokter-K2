@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import androidx.core.view.MenuItemCompat
+import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -24,27 +28,43 @@ class HomePageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_page)
         val mToolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(mToolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         navController = findNavController(R.id.nav_host_fragment)
         val navView: NavigationView = findViewById(R.id.nav_view)
+
+        //drawer
+        drawerLayout = findViewById(R.id.drawer_layout)
+        appBarConfig = AppBarConfiguration(setOf(R.id.nav_home,
+            R.id.nav_service, R.id.nav_article), drawerLayout)
+        setupActionBarWithNavController(navController, appBarConfig)
+        navView.setupWithNavController(navController)
 
         //bottomnav
         val bottomNavView: BottomNavigationView = findViewById(R.id.bottom_nav)
         bottomNavView.setupWithNavController(navController)
 
-        //drawer
-        drawerLayout = findViewById(R.id.drawer_layout)
-        appBarConfig = AppBarConfiguration(setOf(
-            R.id.nav_profile, R.id.nav_payment_method, R.id.nav_appointment), drawerLayout)
-        setupActionBarWithNavController(navController, appBarConfig)
-        navView.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener{ _, destination, arguments ->
+            mToolbar.isVisible = arguments?. getBoolean("ShowAppBar", true) == true
+            val drawerMenu = arrayOf(R.id.nav_profile)
+            val bottomMenu = arrayOf(R.id.nav_home, R.id.nav_service, R.id.nav_article)
+            val child = arrayOf(R.id.nav_detail_article, R.id.nav_search)
+            when (destination.id) {
+                in drawerMenu -> bottomNavView.visibility = View.GONE
+                in child -> bottomNavView.visibility = View.GONE
+                in bottomMenu -> bottomNavView.visibility = View.VISIBLE
+            }
+        }
+
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.imageprofile)
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_app_bar, menu)
-        return true
+        return super.onCreateOptionsMenu(menu)
     }
 
     //navigate item to destination
@@ -53,7 +73,7 @@ class HomePageActivity : AppCompatActivity() {
                 super.onOptionsItemSelected(item)
     }
 
-    //open drawer when drawer icon clicked and back btn presse
+    //open drawer when drawer icon clicked and back btn press
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.nav_host_fragment).navigateUp(appBarConfig) || super.onSupportNavigateUp()
     }
