@@ -8,16 +8,16 @@
     <item
         android:id="@+id/nav_service"
         android:enabled="true"
-        android:title="@string/label_services"
+        android:title="@string/label_dokter"
         android:icon="@drawable/ic_service"/>
     <item
         android:id="@+id/nav_article"
         android:enabled="true"
         android:title="@string/label_articles"
         android:icon="@drawable/ic_article"/>
-    <item
-        android:id="@+id/nav_messages"
-        android:enabled="true"
-        android:title="@string/label_messages"
-        android:icon="@drawable/ic_message_text"/>
+<!--    <item-->
+<!--        android:id="@+id/nav_messages"-->
+<!--        android:enabled="true"-->
+<!--        android:title="@string/label_messages"-->
+<!--        android:icon="@drawable/ic_message_text"/>-->
 </menu>

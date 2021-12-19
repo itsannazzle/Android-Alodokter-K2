@@ -1,9 +1,8 @@
 package com.nextint.alodokterbykelompok2.ui.doctor
 
 import androidx.lifecycle.ViewModel
-import com.nextint.alodokterbykelompok2.model.Doctor
-import com.nextint.alodokterbykelompok2.utils.DataDummy
+import com.nextint.alodokterbykelompok2.data.AloRepository
 
-class DoctorViewModel : ViewModel() {
-    fun getDoctor(): List<Doctor> = DataDummy.generateDummyDoctor()
+class DoctorViewModel(private val aloRepository: AloRepository) : ViewModel() {
+    fun getDoctor() = aloRepository.getDoctors()
 }

@@ -6,6 +6,7 @@
     <dimen name="spacing_167">167dp</dimen>
     <dimen name="spacing_155">155dp</dimen>
     <dimen name="spacing_130">130dp</dimen>
+    <dimen name="spacing_110">110dp</dimen>
     <dimen name="spacing_98">98dp</dimen>
     <dimen name="spacing_85">85dp</dimen>
     <dimen name="spacing_80">80dp</dimen>
@@ -32,6 +33,13 @@
     <dimen name="font_16">16sp</dimen>
     <dimen name="font_14">14sp</dimen>
     <dimen name="font_12">12sp</dimen>
+    <dimen name="font_11">11sp</dimen>
     <dimen name="font_10">10sp</dimen>
     <dimen name="font_9">9sp</dimen>
+    <dimen name="spacing_18">18dp</dimen>
+    <dimen name="font_8">8sp</dimen>
+    <dimen name="spacing_21">21dp</dimen>
+    <dimen name="spacing_23">23dp</dimen>
+    <dimen name="spacing_22">22dp</dimen>
+    <dimen name="spacing_2">2dp</dimen>
 </resources>
